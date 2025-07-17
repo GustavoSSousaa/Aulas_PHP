@@ -1,0 +1,101 @@
+<!--Codigo html do formulario-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario SA</title>
+    <!--Escreva o CSS ou utilize bootstrap no codigo abaixo-->
+    <script src="FormularioSA.js"></script>
+    <link rel="stylesheet" type="text/css" href="FormularioSA.css" media=" all">
+</head>
+<body>
+    <form action="FormularioSA.php" id="formulario" onsubmit="return valida()" method="post">
+        <!--Dados Pessoais-->
+        <center><fieldset>
+            <div>
+                <h3>Cadastro De Produto | ADM</h3>
+            </div>
+            <div id="linha">
+                <hr>
+            </div>
+            <br>
+            <div id="autor">
+                <h2> Gustavo Sousa </h2>
+            </div>
+            <table border="0" cellspacing="5" >
+                <tr><!--TIPO DA BATERIA-->
+                    <td align="right">
+                        <label for="tipo">TIPO DA BATERIA:</label>
+                    </td>
+                    <td align="left">
+                        <input class="tamanho" type="text" name="tipo" size="15"required>
+                    </td>
+                </tr>
+
+                <tr><!--VOLTAGEM DA BATERIA-->
+                    <td align="right">
+                        <label for="voltagem">VOLTAGEM DA BATERIA:</label>
+                    </td>
+                    <td align="left">
+                        <input class="tamanho2" type="text" name="voltagem" size="15" maxlength="15">
+                    </td>
+                </tr>
+
+                <tr><!--MARCA DA BATERIA-->
+                    <td align="right">
+                        <label for="marca">MARCA DA BATERIA:</label>
+                    </td>
+                    <td align="left">
+                        <input class="tamanho1" type="text" name="marca" required>
+                    </td>
+                </tr>
+
+                <tr><!--QUANTIDADE DE BATERIA-->
+                    <td align="right">
+                        <label for="qtda">QUANTIDADE DE BATERIA:</label>
+                    </td>
+                    <td align="left">
+                        <input type="text" required onkeypress="mascara(this,CartaoSus)" maxlength="10">
+                    </td>
+                </tr>
+
+                <tr><!--PREÇO DA BATERIA-->
+                    <td align="right">
+                        <label for="preco">PREÇO DA BATERIA:</label>
+                    </td>
+                    <td align="left">
+                        <input type="text"required onkeypress="mascara(this,data)" maxlength="14">
+                    </td>
+                </tr>
+
+                <tr><!--DATA DE VALIDADE-->
+                    <td align="right">
+                        <label for="data">DATA DE VALIDADE:</label>
+                    </td>
+                    <td align="right">
+                        <label for="">
+                        <input type="text"required onkeypress="mascara(this,data)" maxlength="10"> (DD|MM|AAAA)
+                    </label>
+                    </td>
+                    <td>
+                    </td> 
+                </tr>
+
+                    
+                    <td class="botao">
+                        
+                        <input class="btn1" type="submit" onclick="return validar" value="CADASTRAR">
+                        <br>
+                        <br>
+                        <input calss="btn2" type="button" value="CANCELAR">
+                    </td>
+                
+                </tr>
+            </table>
+        
+        </fieldset>
+    </center>
+        </form>
+</body>
+</html>
