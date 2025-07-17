@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="FormularioSA.css" media=" all">
 </head>
 <body>
-    <form action="FormularioSA.php" id="formulario" onsubmit="return valida()" method="post">
+    <form action="FormularioSA.php" method="get">
         <!--Dados Pessoais-->
         <center><fieldset>
             <div>
@@ -29,7 +29,7 @@
                         <label for="tipo">TIPO DA BATERIA:</label>
                     </td>
                     <td align="left">
-                        <input class="tamanho" type="text" name="tipo" size="15"required>
+                        <input class="tamanho" type="text" name="tipo1" size="15"required>
                     </td>
                 </tr>
 
@@ -38,7 +38,7 @@
                         <label for="voltagem">VOLTAGEM DA BATERIA:</label>
                     </td>
                     <td align="left">
-                        <input class="tamanho2" type="text" name="voltagem" size="15" maxlength="15">
+                        <input class="tamanho2" type="text" name="voltagem1" size="15" maxlength="15">
                     </td>
                 </tr>
 
@@ -47,7 +47,7 @@
                         <label for="marca">MARCA DA BATERIA:</label>
                     </td>
                     <td align="left">
-                        <input class="tamanho1" type="text" name="marca" required>
+                        <input class="tamanho1" type="text" name="marca1" required>
                     </td>
                 </tr>
 
@@ -56,7 +56,7 @@
                         <label for="qtda">QUANTIDADE DE BATERIA:</label>
                     </td>
                     <td align="left">
-                        <input type="text" required onkeypress="mascara(this,CartaoSus)" maxlength="10">
+                        <input type="text" name="qtda1" required onkeypress="mascara(this,CartaoSus)">
                     </td>
                 </tr>
 
@@ -65,7 +65,7 @@
                         <label for="preco">PREÇO DA BATERIA:</label>
                     </td>
                     <td align="left">
-                        <input type="text"required onkeypress="mascara(this,data)" maxlength="14">
+                        <input type="text" name="preco1">
                     </td>
                 </tr>
 
@@ -75,7 +75,7 @@
                     </td>
                     <td align="right">
                         <label for="">
-                        <input type="text"required onkeypress="mascara(this,data)" maxlength="10"> (DD|MM|AAAA)
+                        <input type="text" name="data1" required onkeypress="mascara(this,data)" > (DD|MM|AAAA)
                     </label>
                     </td>
                     <td>
@@ -85,7 +85,7 @@
                     
                     <td class="botao">
                         
-                        <input class="btn1" type="submit" onclick="return validar" value="CADASTRAR">
+                        <input class="btn1" type="submit" value="Enviar">
                         <br>
                         <br>
                         <input calss="btn2" type="button" value="CANCELAR">
