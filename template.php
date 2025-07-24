@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,11 +26,6 @@
                 Prazo (Opcional):
                 <input type="text" name="prazo" />
 </label>
-
-<label>
-                Tarefa:
-                <input type="text" name="nome" />
-</label>
             <fieldset>
                 <legend>Prioridade:</legend>
                 <label>
@@ -55,12 +49,20 @@
 <table>
     <tr>
         <th>Tarefas</th>
+        <th>Descrição</th>
+        <th>Prazo</th>
+        <th>Prioridade</th>
+        <th>Concluida</th>
 </tr>
-<?php foreach ($lista_tarefas as $tarefa) : ?>
-    <tr>
-        <td><?php echo $tarefa; ?> </td>
-</tr>
-<?php endforeach; ?>
+    <?php foreach ($lista_tarefas as $tarefa) : ?>
+        <tr>
+            <td><?php echo $tarefa['nome']; ?> </td>
+            <td><?php echo $tarefa['descricao']; ?> </td>
+            <td><?php echo $tarefa['prazo']; ?> </td>
+            <td><?php echo $tarefa['prioridade']; ?> </td>
+            <td><?php echo $tarefa['concluida']; ?> </td>
+    </tr>
+    <?php endforeach; ?>
 </table>
 </body>
 </html>
