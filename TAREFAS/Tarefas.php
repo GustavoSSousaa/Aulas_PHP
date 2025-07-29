@@ -27,7 +27,9 @@ include "banco.php";
                 }else{
                     $tarefa['concluida'] = '';
                 }
+
             $_SESSION['lista_tarefas'][] = $tarefa;
+
             }
 
             $lista_tarefas = buscar_tarefas($conexao);
