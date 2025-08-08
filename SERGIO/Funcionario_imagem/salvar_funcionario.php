@@ -73,9 +73,34 @@ function redimensionarImagem($imagem,$largura,$altura){
                 $stmt->bindParam(':telefone',$telefone); // LIGA OS PARAMETROS AS VARIAVEIS
                 $stmt->bindParam(':nome_foto',$nomeFoto); // LIGA OS PARAMETROS AS VARIAVEIS
                 $stmt->bindParam(':tipo_foto',$tipoFoto); // LIGA OS PARAMETROS AS VARIAVEIS
-                $stmt->bindParam(':foto',$foto,PDO::PARAM_LOB); // LIGA OS PARAMETROS AS VARIAVEIS
+                $stmt->bindParam(':foto',$foto,PDO::PARAM_LOB); // LOB = LARGE OBJECT - USADO PARA DADOS BINARIOS COMO IMAGEM
 
+                if($stmt->execute()){
+                    echo "FUNCIONARIO CADASTRADO COM SUCESSO!";
+                } else{
+                    echo "ERRO AO CADASTRO O FUNCIONARIO";
+                }
+
+            } else{
+                echo "ERRO AO FAZER UPLOAD DA FOTO! CODIGO: ". $_FILES['foto']['error'];
             }
         }
+    } catch(PDOException $e){
+        echo "ERRO." .$e->getMessage(); // MOSTRA
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de imagens</title>
+</head>
+<body>
+    <h1>LISTA DE IMAGENS</h1>
+
+    <a href="consulta_funcionario.php">Listar Funcionarios</a>
+    
+</body>
+</html>
